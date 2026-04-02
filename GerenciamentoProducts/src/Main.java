@@ -1,9 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void menu(){
         Scanner sc = new Scanner(System.in);
+        GerenciamentoProdutos gProdutos = new GerenciamentoProdutos();
         boolean continuar = true;
+        int quantidade;
         while (continuar){
             String escolha;
 
@@ -18,8 +21,12 @@ public class Main {
 
             switch(escolha){
                 case "1":
+                    System.out.println("Informe a quantidade de produtos que deseja incluir.");
+                    quantidade = sc.nextInt();
+                    gProdutos.CadastrarProduto(quantidade);
                     break;
                 case "2":
+                    gProdutos.ListarProdutos();
                     break;
                 case "3":
                     break;
@@ -41,4 +48,3 @@ public class Main {
     public static void main(String[] args){
             menu();
         }
-}
