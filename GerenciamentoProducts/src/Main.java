@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void Main(String[] args){
+    public static void menu(){
         Scanner sc = new Scanner(System.in);
         boolean continuar = true;
-        
         while (continuar){
             String escolha;
 
@@ -19,25 +18,27 @@ public class Main {
 
             switch(escolha){
                 case "1":
+                    break;
                 case "2":
+                    break;
                 case "3":
+                    break;
                 case "4":
+                    break;
                 case "5":
                     System.out.println("Finalizando o programa...");
                     continuar = false;
                     break;
                     
                 default:
-                    System.out.println("Favor selecionar uma das escolhas corretas");
+                    System.out.println("Favor SELECIONAR uma das OPÇÕES VÁLIDAS...");
                     break;
-            }
-
-
+            }       
         }
-
-
-        
+        sc.close();
 
     }
-
+    public static void main(String[] args){
+            menu();
+        }
 }
