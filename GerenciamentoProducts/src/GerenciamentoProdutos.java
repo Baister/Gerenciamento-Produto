@@ -3,17 +3,27 @@ import java.util.Scanner;
 
 
 public class GerenciamentoProdutos {
-    ArrayList <String> listaProduto = new ArrayList<>();
+    ArrayList <GuardaProduto> listaProduto = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
-    String nomeProduto;
+    String nome;
+    int qtd;
     double preco;
+
 
     public void CadastrarProduto(int quantidade) {
         try{
              for (int i = 0; i < quantidade; i++) {
-                 System.out.printf("Informe o %d° produto:", i+1);
-                    nomeProduto = sc.nextLine();
-                    listaProduto.add(nomeProduto);
+                 System.out.printf("Informe o nome do %d° produto: ", i+1);
+                 nome = sc.nextLine();
+
+                 System.out.printf("Informe a quantidade do %d° produto: ", i+1);
+                 qtd = sc.nextInt();
+
+                 System.out.printf("Informe o preço do %d° produto: ", i+1);
+                 preco = sc.nextDouble();
+
+                 listaProduto.add(new GuardaProduto(nome, qtd, preco));
+                 sc.nextLine();
                  System.out.println("Produto Cadastrado!");
                 }
         }catch(Exception error){
@@ -24,7 +34,7 @@ public class GerenciamentoProdutos {
     public void ListarProdutos(){
 
         try {
-            for (String listar : listaProduto) {
+            for (GuardaProduto listar : listaProduto) {
                 System.out.println(listar);
             }
             System.out.println("Produtos listados com sucesso!");

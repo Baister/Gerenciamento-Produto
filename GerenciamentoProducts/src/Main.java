@@ -45,6 +45,7 @@ public class Main {
         sc.close();
 
     }
-    public static void main(String[] args){
-            menu();
-        }
+    public static void main() {
+        menu();
+    }
+}
